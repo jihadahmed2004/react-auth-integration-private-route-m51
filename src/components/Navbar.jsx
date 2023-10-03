@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
     .then(()=>console.log('user logged out successfully'))
-    .cacth(error=>console.error(error))
+    .catch(error=>console.error(error))
   }
 
   const navLinks = (
@@ -22,6 +22,15 @@ const Navbar = () => {
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
+      <li>
+        <NavLink to="/orders">Orders</NavLink>
+      </li>
+      { user &&
+        <>
+          <Link to="/orders">Profile</Link>
+          <Link to="/orders">Dashboard</Link>
+        </>
+      }
     </>
   );
 
